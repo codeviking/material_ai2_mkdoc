@@ -18,11 +18,7 @@
       {% elif config.site_author %}
         <meta name="author" content="{{ config.site_author }}">
       {% endif %}
-      {% if config.site_favicon %}
-        <link rel="shortcut icon" href="{{ base_url }}/{{ config.site_favicon }}">
-      {% else %}
-        <link rel="shortcut icon" href="{{ base_url }}/assets/images/favicon.png">
-      {% endif %}
+      <link rel="shortcut icon" href="/favicon.ico">
       <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-1.5.4">
     {% endblock %}
     {% block htmltitle %}
@@ -117,6 +113,17 @@
               {% block content %}
                 {% if config.edit_uri %}
                   <a href="{{ page.edit_url }}" title="{{ lang.t('edit.link.title') }}" class="md-icon md-content__icon">edit</a>
+                {% endif %}
+                {% if page.is_homepage %}
+                  <div class="made-by-ai2">
+                    Proudly built by:
+                    <div class="made-by-ai2__logo-and-link">
+                      <img src="{{ base_url }}/assets/images/ai2-full-logo.720x142.png" width="360" height="71">
+                      <a href="http://allenai.org">http://allenai.org</a> &bull;
+                      <a href="https://twitter.com/allenai_org">@allenai_org</a> &bull;
+                      <a href="mailto:info@allenai_org">ai2-info@allenai_org</a>
+                    </div>
+                  </div>
                 {% endif %}
                 {% if not "\x3ch1" in page.content %}
                   <h1>{{ page.title | default(config.site_name, true)}}</h1>
