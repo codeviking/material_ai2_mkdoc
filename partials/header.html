@@ -29,10 +29,12 @@
           {% include "partials/search.html" %}
         {% endblock %}
       </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
+      <div class="md-flex__cell md-flex__cell--shrink" style="vertical-align: middle;">
         <div class="md-header-nav__source">
-          {% if config.repo_url %}
-            {% include "partials/source.html" %}
+          {% if config.download_url %}
+            <a href="{{config.download_url}}" download class="md-header-nav__download">
+              DOWNLOAD
+            </a>
           {% endif %}
         </div>
       </div>

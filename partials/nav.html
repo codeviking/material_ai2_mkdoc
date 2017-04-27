@@ -5,10 +5,10 @@
     </a>
     {{ config.site_name }}
   </label>
-  {% if config.repo_url %}
-    <div class="md-nav__source">
-      {% include "partials/source.html" %}
-    </div>
+  {% if config.download_url %}
+    <a href="{{config.download_url}}" download class="md-nav__link md-mobile-nav__download">
+      DOWNLOAD
+    </a>
   {% endif %}
   <ul class="md-nav__list" data-md-scrollfix>
     {% for nav_item in nav %}
